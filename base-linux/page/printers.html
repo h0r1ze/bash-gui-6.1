@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base</title>
+    <link rel="icon" type="image/x-icon" href="../img/icon/favicon.png">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <p id="powered">powered by @heavyname</p>
+    <p id="navigation_title-printers">
+      
+      Навигация по странице
+      <br> Принтеры | Сканеры
+      <br>
+      <br>Прочее
+    </p>
+    <a href="#">Создание ярлыка запуска(сеть)</a>
+    <p id="navigation_title-printers">Canon</p>
+    <a href="#canon_print">Драйвера</a>
+    <a href="#canon_I-SENSYS_mf426dw">I-SENSYS mf426dw(сеть)</a>
+    <p id="navigation_title-printers">Samsung</p>
+    <a href="#samsung_print">Драйвера</a>
+    <!-- <a href="#samsung_scan">- Samsung Сканирование</a> -->
+    <p id="navigation_title-printers">Kyocera</p>
+    <a href="#kyocera_print">Драйвера</a>
+    <a href="#kyocera_TASKalfa_7002i">TASKalfa 7002i(сеть)</a>
+    <!-- <a href="#kyocera_scan">- Kyocera Сканирование</a> -->
+    <p id="navigation_title-printers">HP</p>
+    <a href="#hp_plugin_scan">Cканирования</a>
+    <a href="#hp_plugin_print">Печать</a>
+    <!-- <a href="#hp_scan">- HP Сканирование</a> -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  </div>
+  <div id="mySidenavRight" class="sidenavRight">
+    <p id="navigation_titleRight">База знаний</p>
+    <a href="javascript:void(0)" class="closebtnRight" onclick="closeNavRight()">×</a>
+    <a href="../distr/" class="baselink">- Дистрибутивы</a>
+    <br>
+    <a href="./redos.html" class="baselink" >- RedOS установка/обновление</a>
+    <a href="./kernel-remove.html" class="baselink">- Обновление ядра / удаление старых ядер</a>
+    <a href="dnf.html" class="baselink">- Преднастройка dnf.conf</a>
+    <a href="../index.html" class="baselink">- Kaspersky | VipNet Client | CryptoPro CSP 4.0 | CryptoPro CSP 5.0</a>
+    <a href="#" class="baselink">- Принтеры | Сканеры</a>
+    <a href="./thunderbird.html" class="baselink">- Перенос c Outlook в Thunderbird</a>
+  </div>
+  <div class="background">   
+    <div class="content">
+      <h1>Прочее</h1>
+    </div>
+    <div class="content" id="commandkas">
+      <h2>Создание ярлыка запуска(сеть)</h2>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Для создания ярлыка(кнопки запуска) необходимо нажать ПКМ по рабочему столу
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/createbuttonscan.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Вбиваем произвольное имя ярлыка, и команду: simple-scan " "
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/createbutton.png">
+    </div> 
+    <div class="description_div">
+      <p class="description_p">
+        Теперь необходимо найти сканер. 
+    </div>
+    <div class="div-align">
+      <p class="js-copy-text">scanimage -L</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        <br> В данном случае один принтер определяется сразу 2 видами драйверов <b>Apple</b> - AirScan, eSCL и <b>HP</b> - hpaio
+        <br> Для сети необходимо выбрать c ip адресом и тот что быстрее.(не всегда фирменный сканер будет быстрее нежели аналоговый).
+        <br>
+        <br> Необходимо скопировать всю строчку в одинарных ковычках: <b> 'Найденный сканер в сети' </b>
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/scanimageL.png">
+    </div> 
+    <div class="description_div">
+      <p class="description_p">
+        Пример как должно получиться:
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/settingsbutton.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        После запуска ярлыка у нас будет автоматически выбран сканер:
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/test_scanning.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Если стоит МФУ и пользователю необходимо сканировать из автоподатчика, то необходимо выбрать его в параметрах:
+        <br>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/Inkedsettingscan_one.jpg">
+      <br>
+      <br>
+        <p style="margin: 5px 200px 15px 200px;text-align: initial;text-decoration: underline;color: red;font-weight: 500;">
+          В ИНОМ СЛУЧАЕ ВЫЙДЕТ ОШИБКА ЧТО НЕ УДАЛОСЬ СВЯЗАТЬСЯ С ПРИНТЕРОМ
+        </p>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Также необходимо убедиться что параметры страницы заданы верно, иначе будет сканировать в нестандартном формате.
+        <br>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/settingsscan.png">
+    </div>
+    <div class="content">
+      <h1 id="canon_print">Canon</h1>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Устанавливаем <a target="_blank" href="https://asia.canon/en/support/0100924010">linux-UFRII Driver для Linux</a>
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img class="img_big" src="../img/printers_page/canonufr.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Распаковываем в любое место, открываем терминал в папке драйвера и запускаем bash скрипт.
+      </p>
+    </div> 
+    <div class="div-align">
+      <p class="js-copy-text">./install.sh</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Если выдаст ошибку, то необходимо выдать права для install.sh
+      </p>
+    </div> 
+    <div class="div-align">
+      <p class="js-copy-text">chmod +x install.sh</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <div class="content" id="commandkas">
+      <h2 id="canon_I-SENSYS_mf426dw">Настройка I-SENSYS mf426dw (Сеть)</h2>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Для установки принтера после запуска скрипта необходимо выбрать его в предлагаемом каталоге.
+      </p>
+    </div>   
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/mf426dwcanonselect.png">
+    </div>
+    <br> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/mf426dwchoose.png">
+    </div> 
+    <br>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/mf426dwlpd.png">
+    </div>     
+    <div class="description_div">
+      <p class="description_p">
+        Если не получается установить драйвер печати/сканера устанавливаем <a target="_blank" href="https://asia.canon/en/support/0100459601">Capt Driver для Linux</a>
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img class="img_big" src="../img/printers_page/canoncapt.png">
+    </div> 
+    <div class="content">
+      <h1 id="samsung_print">Samsung</h1>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Скачиваем драйвера с официального сайта HP
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img class="img_big" src="../img/printers_page/samsungofficialpage.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Распаковываем архив в любое удобное место, открываем терминал из под SU
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/samsung_installation.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Запускаем скрипт инсталяции
+      </p>
+    </div>
+    <div class="div-align">
+      <p class="js-copy-text">./install.sh</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Подтверждаем лицензионное соглашение
+      </p>
+    </div>
+    <div class="div-align">
+      <pre class="js-copy-text-code">
+
+[<b style="color:#ff4c4c;">root@redos73</b> uld] <b style="color:yellow;">#</b> ./install.sh
+**** Running install ...
+**** Press 'Enter' to continue or 'q' and then 'Enter' to quit. : <b style="color:#32d42f; font-size: 25px;">ENTER</b>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+END-USER LICENSE AGREEMENT FOR SAMSUNG ELECTRONICS SOFTWARE PRODUCT 
+
+IMPORTANT-READ CAREFULLY: This Samsung Electronics End-User License Agreement ("
+EULA") is a legal agreement between you (either an individual or a single entity
+) and Samsung Electronics Co., Ltd. ("SAMSUNG ELECTRONICS") with respect to the 
+SAMSUNG ELECTRONICS software product intended to be used with the SAMSUNG device
+s. The SAMSUNG ELECTRONICS software product may include associated software comp
+onents, media, printed materials and "online" or electronic documentation develo
+ped and provided by SAMSUNG ELECTRONICS ("SOFTWARE PRODUCT"). For all other thir
+d party software products which may be supplied with or for the SAMSUNG devices,
+  your use of such software products shall be subject to separate terms of use an
+d end user license agreements of such third parties.   By installing, copying, d
+ownloading or using the SOFTWARE PRODUCT, you agree to be bound by the terms of 
+this EULA. If you do not agree to the terms of this EULA, you may not install or
+  use the SOFTWARE PRODUCT. 
+
+1.	GRANT OF LICENSE. 
+The SOFTWARE PRODUCT is licensed, not sold. Subject to the condition that you ar
+e in compliance with the terms of this EULA, SAMSUNG ELECTRONICS grants you the 
+following licenses: you may install and use as many copies of the SOFTWARE PRODU
+CT, or any prior version for the same operating system, for use strictly for the
+  personal use, on any computer owned and used by members. No other use, copying 
+or distribution of the SOFTWARE PRODUCT is permitted. Your use of the SOFTWARE P
+RODUCT shall be subject to restrictions and limitations as specified in this EUL
+A.  You cannot modify the SOFTWARE PRODUCT or disable any licensing or control f
+eatures of the SOFTWARE PRODUCT directly. If the SOFTWARE PRODUCT is licensed fo
+r concurrent use, you may not allow more than the maximum number of authorized S
+amsung devices and users to use the SOFTWARE PRODUCT concurrently.  If you are i
+nstalling this copy of the SOFTWARE PRODUCT as an upgrade, update, patch or enha
+ncement of a prior release of the same SOFTWARE PRODUCT which was installed on t
+he same computer, your rights under the prior license agreement for the SOFTWARE
+  PRODUCT are terminated, and all of your use of the SOFTWARE PRODUCT (including 
+its prior versions) are solely under the terms of this license agreement.
+
+2. 	RESTRICTIONS AND LIMITATIONS ON USE OF THE SOFTWARE PRODUCT
+PROHIBITION OF ALTERATION
+Except to the extent such a restriction is unenforceable under local law, you ma
+y not reverse engineer, decompile, or disassemble the SOFTWARE PRODUCT. The SOFT
+WARE PRODUCT is licensed as a single product, and its component parts may not be
+  separated for use on more than one computer. Except to the extent such a restri
+ction is unenforceable under local law, you may not modify, amend, or create der
+ivative works of the SOFTWARE PRODUCT. 
+
+RENTAL 
+Except to the extent such a restriction is unenforceable under local law, you ma
+y not lease, lend or rent the SOFTWARE PRODUCT to anyone.
+
+3.	COPYRIGHT. 
+The SOFTWARE PRODUCT is protected by copyright laws and international copyright 
+treaties, as well as other intellectual property laws and treaties that are rele
+vant to your use of the SOFTWARE PRODUCT. All title and copyrights in and to the
+  SOFTWARE PRODUCT (including but not limited to any images, photographs, animati
+ons, video, audio, music, text, and "applets" incorporated into the SOFTWARE PRO
+DUCT) are owned by SAMSUNG ELECTRONICS. 
+
+MARKING AND MAINTENANCE OF COPYRIGHT You may not remove or change the marking of
+  the copyright from the SOFTWARE PRODUCT and all of its copies.
+
+INTELLECTUAL PROPERTY RIGHTS All titles and copyrights in and of the SOFTWARE PR
+ODUCT and any copies of the SOFTWARE PRODUCT are owned by SAMSUNG ELECTRONICS or
+  its suppliers.  All title and intellectual property rights in and of the conten
+t which may be accessed through use of the SOFTWARE PRODUCT is the property of t
+he respective content owners and may be protected by the applicable copyright or
+  other intellectual property laws and treaties.  Without SAMSUNG ELECTRONICS' pr
+ior consent, the act of arbitrarily reproducing, copying or distributing this pr
+oduct and relevant print materials, shall be material breach of this EULA, and v
+iolation of the relevant copyright laws. In case of any violation or breach of t
+erms of this EULA, SAMSUNG ELECTRONICS may hold you directly liable for compensa
+tion. 
+
+THIRD PARTY WORKS. To the extent that any third party's intellectual property is
+  incorporated within the SOFTWARE PRODUCT, you agree that such third party is a 
+third-party beneficiary of the terms of this EULA to the extent of the third par
+ty's license to SAMSUNG ELECTRONICS.
+
+4.	TRANSFER
+To the extend permitted by the laws of your permanent residence, you may transfe
+r this license and your original and any permitted backup copy of the SOFTWARE P
+RODUCT to another authorized person or legal entity, provided: (1) the other per
+son/legal entity receives a copy of this Agreement or other applicable Samsung S
+oftware License Agreement and agrees to be bound by its terms and conditions; (2
+) you erase or destroy all copies of the SOFTWARE PRODUCT; and (3) you at all ti
+mes comply with all applicable export control laws and regulations.
+
+5.	WARRANTIES AND SUPPORT
+SUPPORT: SAMSUNG ELECTRONICS may provide you with product support related to the
+  SOFTWARE PRODUCT. You may use and receive the support in accordance with the us
+er guide, "online" documentation or the SAMSUNG ELECTRONICS' policies and progra
+ms stipulated in the materials provided by SAMSUNG ELECTRONICS.  Any third party
+  software that is provided to you as part of the SAMSUNG devices shall be subjec
+t to terms and conditions of the third party, and support for such third party s
+oftware products shall be subject to the support for such third party software m
+ade available and provided by the third party. SAMSUNG ELECTRONICS does not have
+  any support obligations for such third party software products. 
+
+LIMITED WARRANTY: THE SOFTWARE PRODUCT IS PROVIDED TO YOU “AS IS.”   SAMSUNG DOE
+S NOT WARRANT THAT THE SOFTWARE PRODUCT IS ERROR OR BUG FREE, OR PERFORM OR FUNC
+TION AS INTENDED.  IN THE EVENT THAT THE SOFTWARE PRODUCT IS FOUND TO BE DEFECTI
+VE, YOU MAY BE AFFORDED WITH THE THEN AVAILABLE PRODUCT SUPPORT.  TO THE MAXIMUM
+  EXTENT PERMITTED BY APPLICABLE LAW, SAMSUNG AND ITS SUPPLIERS DISCLAIM ALL OTHE
+R WARRANTIES AND CONDITIONS WITH REGARD TO OR ARISING OUT OF THE SOFTWARE PRODUC
+T, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT AND/OR AC
+CURACY OF INFORMATION.  SOME JURISDICTIONS, COUNTRIES OR STATES DO NOT ALLOW THE
+  EXCLUSION OR LIMITATION OF CERTAIN WARRANTIES, SO THE ABOVE LIMITATION OR EXCLU
+SION OF WARRANTIES MAY NOT APPLY TO YOU ONLY TO THE EXTENT SUCH APPLICATION IS C
+ONTRARY TO THE LAWS OF RELEVANT JURISDICTIONS, COUNTRIES OR STATES. 
+
+
+SUPPORT INFORMATION: With respect to information that you provide to SAMSUNG ELE
+CTRONICS as part of the support, SAMSUNG ELECTRONICS may use it with a view to s
+upporting and developing its products, and all other use of such information sha
+ll be subject to SAMSUNG ELECTRONICS’ then privacy policy. 
+
+
+6. 	CONCESSION  
+By installing and using the SOFTWARE PRODUCT, it is conceded that you have read 
+and understand the agreement, and agree to all of its terms and conditions.  The
+  agreement takes precedence over any other agreements concluded between you and 
+SAMSUNG ELECTRONICS. 
+
+7. 	CONSENT TO USE OF DATA
+SAMSUNG ELECTRONICS may collect and use technical information you provide in rel
+ation to your installation and use of the SOFTWARE PRODUCT or the provision of s
+upport services related to the SOFTWARE PRODUCT. All such information will be su
+bject to SAMSUNG ELECTRONICS’ privacy policy. 
+
+8. 	TERMINATION
+Without prejudice to any other rights, SAMSUNG ELECTRONICS may terminate this EU
+LA or your rights under this EULA at any time if you fail to comply with the ter
+ms and conditions of this EULA. Upon termination of your rights under this EULA 
+for any reason, or upon termination of the EULA itself, you must destroy all cop
+ies of the SOFTWARE PRODUCT and all of its component parts in your possession (i
+ncluding all component parts, the media and printed materials, any prior version
+s, and this EULA). The terms of this paragraph shall survive any termination of 
+this EULA. 
+
+9. 	LIMITATION OF LIABILITY
+You are solely and entirely liable for the performance or results you may obtain
+  by using the SOFTWARE PRODUCT and SAMSUNG ELECTRONICS shall not be liable for l
+osses arising from your use of the SOFTWARE PRODUCT and for any losses arising f
+rom your inability to use the SOFTWARE PRODUCT. 
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SAMSUNG OR 
+ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL 
+DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS 
+PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUN
+IARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE PRODUCT, E
+VEN IF SAMSUNG HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN ANY CASE,
+  SAMSUNG'S ENTIRE LIABILITY UNDER ANY PROVISION OF THIS EULA SHALL BE LIMITED TO
+  THE GREATER OF THE AMOUNT ACTUALLY PAID BY YOU FOR THE SOFTWARE PRODUCT OR US$5
+.00. SOME JURISDICTIONS, COUNTRIES OR STATES DO NOT ALLOW THE EXCLUSION OR LIMIT
+ATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSI
+ON MAY NOT APPLY TO YOU ONLY TO THE EXTENT SUCH APPLICATION IS CONTRARY TO THE L
+AWS OF RELEVANT JURISDICTIONS, COUNTRIES OR STATES. 
+10. 	Others
+If you have any questions regarding this agreement and other products, please co
+ntact SAMSUNG ELECTRONICS.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+**** Do you agree ? [y/n] : <b style="color:#32d42f; font-size: 25px;">Y</b>
+**** The same version of Print driver is already installed.
+**** The same version of Scan driver is already installed.
+**** Install finished.  
+      </pre>
+    </div>
+    <div class="content">
+      <h1 id="kyocera_print">Kyocera</h1>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Качаем драйвера(обозначается как Linux Universal Driver) в некоторых случаях также будут доступны PPD файлы(обозначается как SANE driver) <a target="_blank" href="https://www.kyoceradocumentsolutions.eu/en/support/downloads.name-L2V1L2VuL21mcC9FQ09TWVNNMjAzNURO.html">официальная страница Kyocera</a>
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img class="img_big" src="../img/printers_page/kyoceralib.png">
+    </div>
+    <div class="content" id="commandkas">
+      <h2 id="kyocera_TASKalfa_7002i">Настройка TASKalfa 7002i (Сеть)</h2>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Для установки необходимо скачать Universal Driver (в ней будет лежать папка для Fedora), SANE (PPD драйвера) и дополнительный драйвер для печати.
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img class="img_big" src="../img/printers_page/taskalfadriverkyocera.png">
+    </div>  
+    <div class="description_div">
+      <p class="description_p">
+        В папке должны остаться только эти файлы и папки:
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/taskalfafolder.png">
+    </div>  
+    <div class="description_div">
+      <p class="description_p">
+        Переходим в папку Fedora и следуем до пути с установкой RPM файла
+      </p>
+    </div> 
+    <div class="div-align">
+      <p class="js-copy-text">dnf install kyodialog-* -y</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div> 
+    <br>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/taskalfadriverfedora.png">
+    </div> 
+    <div class="description_div">
+      <p class="description_p">
+        Теперь переходим в корневую папку и устанавливаем kyocera-sane-2.0
+      </p>
+    </div> 
+    <div class="div-align">
+      <p class="js-copy-text">dnf install kyocera-sane-* -y</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Устанавливаем по стандартному сценарию сетевой принтер, как только необходимо будет установить основной драйвер для печати выбираем наш PPD файл:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/taskalfappd.png">
+    </div> 
+    <div class="content">
+      <h1 id="hp_plugin_scan">HP</h1>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        До установки плагина:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img class="img_big" src="../img/printers_page/hp/scanimage_without_hp.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        После установки плагина:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img class="img_big" src="../img/printers_page/hp/scanimage_after_installation_hp_plugin.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Для работы МФУ/принтера необходимо установить библиотеку и плагин
+        <br><br>Установка библиотеки
+      </p>
+    </div> 
+    <div class="div-align">
+      <p class="js-copy-text">dnf install hplip-gui python3-distro -y</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <br>
+    <div class="description_div">
+      <p class="description_p">
+        <b style="font-size: 25px;"><u>Установка плагина для сканирования</u></b>
+        <br><br>Для начала перейдем к скачиванию самого плагина на официальный сайт hp
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_plugin_search.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Для корректной работы необходимо скачать плагин версии: <b>hplip-3.21.2-plugin.run</b>
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/download_hp_plugin.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Открывается файл в браузере, теперь его необходимо правильно сохранить
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/save_plugin_hp.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Необходимо удалить на конце формат .txt иначе файл не будет отображаться при установки самого плагина.
+        <br><br> Должно получиться: <b>hplip-3.21.2-plugin.run</b>
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/change_txt_to_run.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Теперь необходимо запустить терминал из под пользователя, либо в существующем терминале выходим из под su:
+      </p>
+    </div> 
+    <div class="div-align">
+      <p class="js-copy-text">exit</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <br>
+    <div class="div-align">
+      <p class="js-copy-text">/usr/bin/hp-plugin</p>
+      <button class="js-copy-btn" title="Копировать">Copy</button>
+    </div>
+    <br>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/exit_to_installation_hp_plugin.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Если плагин уже установлен, его можно переустановить:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/update_hp_plugin.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Ставим на второй чекбокс и выбираем файл:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/check_box_two_choose.png">
+    </div>
+    <br>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_choose_hp_run.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        При повторной переустановке может возникнуть данная ошибка:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/failed_to_dowload.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Вводим пароль от учетной записи или пароль от <b><u>root</u></b> в зависимости от того что будет написано в Username:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/access_user_pass.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        После этого зависнет приложение и в терминале будет проходить процесс инсталяции:
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/base.gif" style="margin: 0px 200px 15px 200px; display: flex;">
+    </div>
+    <br>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/installation_success_hp.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        <b style="font-size: 25px;" id="hp_plugin_print""><u>Установка принтера</u></b>
+        <br><br>Заходим в настройки принтера HP
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_manager_printers_installed.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Выбираем метод подключения к принтеру, в моем случае принтер размещен в локальной сети
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_choose_printer.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Стандартно ищется по SLP, поэтому чаще всего возникает ошибка о том, что не удалось найти принер
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_error_printer.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Для корректного поиска необходимо выбрать mDNS/Bonjour если поддерживается на устройстве(можно включить в настройках самого принтера) или же просто найти по ip-адресу.
+      </p>
+    </div> 
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_discovery_printer.png">
+    </div>
+    <br>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_ip_printer.png">
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Выбираем принтер:
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_choose.png">
+    </div>
+    <div class="content">
+      <h1 id="hp_plugin_scan">Решенные проблемы которые встречаются при установке принтеров HP</h1>
+    </div>
+    <div class="description_div">
+      <p class="description_p">
+        Если проблема возникает с <u><b>вводом пароля/добавлением принтера</b></u>, то необходимо выдать/снять права у текущего пользователя.
+        <br>Делается это следующим способом:
+      </p>
+    </div>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_user_choose.png">
+    </div>
+    <br>
+    <div class="image__wrapper" id="detail">
+      <img src="../img/printers_page/hp/hp_rule_add.png">
+    </div>
+  </div>    
+  <!-- <div class="preloader"> 
+    <svg viewBox="0 0 24 24" class="preloader__image" role="img">
+      <path d="M 22.49772,12.000001 A 10.49772,10.497721 0 0 1 12,22.497722 10.49772,10.497721 0 0 1 1.5022797,12.000001 10.49772,10.497721 0 0 1 12,1.5022797 10.49772,10.497721 0 0 1 22.49772,12.000001 Z" fill="none" stroke-linecap="round"></path>
+    </svg>
+    <div class="loadpreloader">
+      <p>
+        Загрузка страницы...
+      </p>
+    </div>
+  </div> -->
+  <a id="hide" title="Убрать все изображения" onclick="hideImageButton()"></a>
+  <a id="show" title="Открыть все изображения" onclick="showImageButton()"></a>
+  <script src='../lib/clipboard.min.js'></script>
+  <script src='../lib/jquery.min.js'></script>
+  <script src="../lib/script/script.js"></script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Подождите идет установка пепврнр пакета..."
-dnf groupinstall 'Development Tools' -y > /dev/null 2>&1 &
+rpm -i downloaddeveloper-kit/DevelopmentTools/*.rpm
 echo "Подождите идет установка второго пакета..."
-dnf install yad -y > /dev/null 2>&1 &
+rpm -i downloaddeveloper-kit/yad/*.rpm
 cd dist/uscript/
 ./configure
 make

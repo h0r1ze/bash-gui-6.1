@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base</title>
+    <link rel="icon" type="image/x-icon" href="./img/icon/favicon.png">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <p id="powered">
+      powered by @heavyname
+    </p>
+    <p id="navigation_title">
+      Навигация по странице
+      <br>Инсталяция СКЗИ, СЗИ
+      <br>
+      <br>
+      Kaspersky
+    </p>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#kaspersky_11"> Kaspersky Endpoint Security – NO GUI</a>
+    <a href="#kaspersky_12"> Kaspersky Endpoint Security – GUI</a>
+    <a href="#kaspersky_13"> Агент Администрирования</a>
+    <a href="#commandkas"> Команды для взаимодействия с Kaspersky Endpoint Security</a>
+    <p id="navigation_title">
+      VIPNET CLIENT
+    </p>
+    <a href="#vipnetinstall">VIPNET CLIENT</a>
+    <a href="#vipnetdns">DNS 10.14.100.222, 10.17.101.222</a>
+    <p id="navigation_title">
+      КРИПТОПРОВАЙДЕР CRYPTOPRO CSP 4.0 | 5.0 [MATE]
+    </p>
+    <a href="#crypto">CryptoPro CSP</a>
+    <a href="#cades">Cades Plugin</a>
+    <a href="#installcer">Установка сертификатов</a>
+    <a href="#sigcer">Подписание файлов</a>
+  </div>
+    <div id="mySidenavRight" class="sidenavRight">
+      <p id="navigation_titleRight">
+        База знаний
+      </p>
+      <a href="javascript:void(0)" class="closebtnRight" onclick="closeNavRight()">×</a>
+      <a href="./distr/" class="baselink" >- Дистрибутивы</a>
+      <br>
+      <a href="./page/redos.html" class="baselink" >- RedOS установка/обновление</a>
+      <a href="./page/kernel-remove.html" class="baselink">- Обновление ядра / удаление старых ядер</a>
+      <a href="./page/dnf.html" class="baselink">- Преднастройка dnf.conf</a>
+      <a href="#" class="baselink">- Kaspersky | VipNet Client | CryptoPro CSP 4.0 | CryptoPro CSP 5.0</a>
+      <a href="./page/printers.html" class="baselink">- Принтеры | Сканеры</a>
+      <a href="./page/thunderbird.html" class="baselink">- Перенос c Outlook в Thunderbird</a>
+    </div>
+    <div id="nav_div">
+      <label onclick="openNav()">
+        <div class="btn-menu" title="Открыть меню навигации">
+          <i></i>
+        </div>
+      </label>
+    </div>
+    <div id="nav_div">
+      <label onclick="openNav()">
+        <div class="btn-menu" title="Открыть меню навигации">
+          <i></i>
+        </div>
+      </label>
+    </div>
+    <div id="nav_divRight">
+      <label onclick="openNavRight()">
+        <div class="btn-menuRight" title="Открыть меню навигации">
+          <i></i>
+        </div>
+      </label>
+    </div>
+    <div id="nav_divRight">
+      <label onclick="openNavRight()">
+        <div class="btn-menuRight" title="Открыть меню навигации">
+          <i></i>
+        </div>
+      </label>
+    </div>
+  <div class="background">   
+    <div class="content">
+      <h1>Инсталяция СКЗИ, СЗИ</h1>
+    </div>
+      <div class="content">
+        <p class="title_p">
+          <h2>Установка Kaspersky Endpoint Security</h2>
+        </p>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          <a target="_blank" href="./page/dnf.html">Перед установкой необходимо убедится что в dnf.conf прописаны параметры.</a>
+        </p>
+      </div>
+      <div class="description_div" id="kaspersky_11">
+        <p class="description_p">
+          1.1	Kaspersky Endpoint Security – NO GUI 
+          <br>Необходимо перейти в папку «Kes»
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">dnf install -y kesl-11.2.0-4528.x86_64.rpm</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="div-align">
+        <p class="js-copy-text">dnf install -y perl-Getopt-Long perl-File-Copy</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          <br>
+          Останавливаем SELINUX
+        </p>
+      </div>
+      <div class="image__wrapper">
+          <img src="./img/selinux.png">
+      </div> 
+      <div class="description_div">
+        <p class="description_p">
+          <br>
+          Запускаем скрипт
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">/opt/kaspersky/kesl/bin/kesl-setup.pl</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Указываем следующее:
+        </p>
+      </div>
+      <div class="div-align">
+        <pre class="js-copy-text-code">
+
+- [ru_RU.UTF-8]:<b style="color: #32d42f; font-size: 25px;"> ENTER</b>
+
+- Press ENTER to display the EULA and Privacy Policy:<b style="color: #32d42f; font-size: 25px;"> Y</b>
+
+- I confirm that I have fully read, understand, and accpet the terms and 
+conditions of this End User License Agreement [y/n]:<b style="color: #32d42f; font-size: 25px;"> Y</b>
+
+- I am aware and agree that my data will be handled and transmitted
+(including to third countries) as described in the Privacy Policy. I
+confirm that I have filly read and understand the Privacy Policy [y/n]:<b style="color: #32d42f; font-size: 25px;"> Y</b>
+
+<b><u>Configuring KSN</u></b>
+
+- I confirm That I have fully read, understand, and accept the terms add
+conditions of the Kaspersky Serucity Netowrk Statement (KSN Statement 
+is available here: '/opt/kaspersky/kesl/doc/ksn_license.ru') [y/n]:<b style="color: #32d42f; font-size: 25px;"> Y</b>
+
+<b><u>Granting the Adminstator role</u></b>
+
+- Only users withe the Administrator role have full access to Kaspersky
+Endpoint Security managment by command line and GUI.
+
+Specify user to grant the 'admin' role to (leave empty to skip): <b style="color: #32d42f; font-size: 25px;"> root</b>
+
+<b><u>Configuring the update source</u></b>
+
+- Specify the update source. Possible values: KLServers | SCServer | < url >:
+
+[KLServers]: <b style="color: #32d42f; font-size: 25px;"> KLServers</b>
+
+<b><u>Configuring proxy server setting to connect to the updates source</u></b>
+
+- If you use an HTTP proxy server to access the internet. please ENTER
+the address in one of the following formats:
+proxyIP: port to user:pass@proxyIP:port, or enter 'no' [n]:<b style="color: #32d42f; font-size: 18px;"> user:pass@proxyIP:port</b>
+
+- Updated databases are an essential part of your server protection.
+Please note that the application may be restarted during the update
+process.
+Do you want to download the latest databases now? [y]:<b style="color: #32d42f; font-size: 25px;"> Y</b>
+
+<b><u>Enabling automatic updates of the application databases</u></b>
+
+- Do you want to enable scheduled updates? [y]:<b style="color: #32d42f; font-size: 25px;"> Y</b>
+
+<b><u>Activate the application</u></b>
+
+- You must activate the application to use it.
+To activate the application now, enter the path to your key file or an
+activation code. Enter an empty string to add the built-in trial key:<b style="color: #32d42f; font-size: 25px;"> ENTER</b>
+        </pre>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p" id="kaspersky_12">
+          1.2	Kaspersky Endpoint Security – GUI 
+          <br>Необходимо перейти в папку «Kes»
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">dnf install -y kesl-gui-11.2.0-4528.x86_64.rpm</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Перезагружаем
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">reboot</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <br>
+      <div class="description_div" id="kaspersky_13">
+        <p class="description_p">
+          1.3	Агент Администрирования
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">dnf -y install klnagent64-11.0.0-29.x86_64.rpm</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="div-align">
+        <p class="js-copy-text">/opt/kaspersky/klnagent64/lib/bin/setup/postinstall.pl</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="image__wrapper">
+        <img src="./img/kesagent.png">
+      </div>
+      <div class="description_div" id="kaspersky_13">
+        <p class="description_p">
+          Проверяем работу агента из под root
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">/opt/kaspersky/klnagent64/bin/klnagchk</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>  
+      <div class="div-align">
+        <pre class="js-copy-text-code">
+
+<b style="color: #32d42f; font-size: 18px;"># Пролистываем в самый конец и должны наблюдать следующую информацию о подключении:</b>
+
+Connecting to server...OK
+
+Connetcting to the Administation Agent...OK
+Administation agent is running
+Acquire Administation Agent statistics...OK
+    Administation Agent statistics:
+    Ping count: 2
+    Succ. pings: 2
+    Sync count: 1
+    Succ. syncs: 1
+    Last ping: 28.10.2022 04:56:34 GMT (28.10.2022 09:56:34)
+        </pre>
+      </div>      
+      <div class="content" id="commandkas">
+        <h2>(НЕОБЯЗАТЕЛЬНЫЕ) Команды для взаимодействия с Kaspersky Endpoint Security</h2>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          Запуск и остановка Kaspersky Endpoint Security
+          Чтобы остановить Kaspersky Endpoint Security в systemd-системе, выполните следующую команду           
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">systemctl stop kesl-supervisor</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Чтобы перезапустить Kaspersky Endpoint Security в systemd-системе, выполните следующую команду            
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">systemctl stop kesl-supervisor</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Чтобы вывести статус Kaspersky Endpoint Security в systemd-системе, выполните следующую команду         
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">systemctl status kesl-supervisor</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="content">
+        <h1 id="vipnetinstall">ПРОГРАММНЫЙ КОМПЛЕКС ДЛЯ ЗАЩИТЫ РАБОЧИХ МЕСТ VIPNET CLIENT</h1>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          Необходимо перейти в папку "VipNet"
+          <br>
+          <br>
+          VipNet - NO GUI
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">dnf install vipnetclient_ru_x86-64_4.13.1-17762.rpm -y</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          VipNet-GUI     
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">dnf install vipnetclient-gui_ru_x86-64_4.13.1-17762.rpm -y</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div" id="vipnetdns">
+        <p class="description_p">
+          <h4>Установка DNS 10.14.100.222, 10.17.101.222</h4>
+          <br>
+          Выдаем права для работы "vipnet_dns.sh"
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">chmod +x vipnet_dns.sh</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Запускаем скрипт
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">./vipnet_dns.sh</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Выходим
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">exit</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Убедимся что создался файл в папке VipNet
+        </p>
+      </div>
+      <div class="image__wrapper">
+        <img src="./img/testfile.png" style="display: flex; max-width: 100px; margin: 0px 0px 15px 200px;" >
+      </div>  
+      <div class="description_div">
+        <p class="description_p">
+          Проверяем DNS
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">nano /etc/vipnet.conf</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="image__wrapper">
+        <img src="./img/vipetdns.png">
+      </div>  
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Проверяем изменен ли NssWitch
+        </p>
+      </div>
+      <div class="div-align">
+        <p class="js-copy-text">nano /etc/authselect/nsswitch.conf</p>
+        <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="image__wrapper">
+        <img src="./img/vipnet_dns2.png">
+      </div>  
+      <br>
+      <div class="description_div">
+          <p class="description_p">
+            Установка ключей
+          </p>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          Без интерфейса:
+        </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">vipnetclient installkeys <ПУТЬ></p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          С интерфейсом:
+        </p>
+      </div>
+      <div class="image__wrapper">
+        <img src="./img/vipnetchoosedesktop.png">
+      </div> 
+      <div class="image__wrapper">
+        <img src="./img/vipnetinstallkeys.png">
+      </div> 
+      <br>
+      <div class="content" id="crypto">
+          <h1>КРИПТОПРОВАЙДЕР CRYPTOPRO CSP 4.0 | 5.0 [MATE]</h1>
+      </div>
+      <div class="description_div">
+          <p class="description_p">
+            Необходимо перейти в папку «КриптоПРО --> linux-amd64»
+          </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">chmod +x install_gui.sh</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+          <p class="description_p">
+            Запускаем скрипт
+          </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">./install_gui.sh</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="image__wrapper">
+          <img src="./img/cryptoinstall.png">
+      </div>  
+        <br>
+      <div class="image__wrapper" id="detail">
+          <img src="./img/cryptochoose.png">
+      </div>  
+      <br>
+      <div class="image__wrapper" id="detail">
+          <img src="./img/cryptolater.png">
+      </div>  
+      <br>
+      <div class="image__wrapper" id="detail">
+          <img src="./img/cryptoexit.png">
+      </div>  
+      <br>
+      <div class="description_div">
+          <p class="description_p">
+            Установка драйверов для токенов Rutoken S
+          </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">dnf install ifd-rutokens -y</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+          <p class="description_p">
+            Установка драйверов для токенов Jacarta
+          </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">dnf install cprocsp-rdr-jacarta*.rpm -y</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+        <div class="description_div">
+          <p class="description_p">
+            Установка средства управления сертификатами token-manager
+          </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">dnf install token-manager -y</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+          <p class="description_p">
+            Установка программного обеспечения для подписи файлов gostcrypto
+          </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">dnf install gostcryptogui caja-gostcryptogui -y</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="content" id="cades">
+          <h2>Установка CryptoPro Extension for CAdES</h2>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          Необходимо перейти в папку «КриптоПРО --> cades-linux-amd64»
+          <br>
+          <br>
+          Установка расширения для плагина Госуслуг (ЕПГУ)
+        </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">dnf install ifcplugin-chromium.x86_64 -y</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          Установка пакетов
+        </p>
+      </div>
+      <div class="div-align">
+          <p class="js-copy-text">dnf install ./cprocsp-pki*rpm -y</p>
+          <button class="js-copy-btn" title="Копировать">Copy</button>
+      </div>
+      <br>
+      <div class="description_div">
+        <p class="description_p">
+          <a target="_blank" href="https://addons.opera.com/en/extensions/details/cryptopro-extension-for-cades-browser-plug-in/">Плагин Cades (Для Яндекс браузера)</a>
+        </p>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          <a target="_blank" href="https://chrome.google.com/webstore/detail/cryptopro-extension-for-c/iifchhfnnmpdbibifmljnfjhpififfog?hl=ru">Плагин Cades (Google Store)</a>
+        </p>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          <a target="_blank" href="https://chrome.google.com/webstore/detail/%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D0%B0-%D0%B3%D0%BE/pbefkdcndngodfeigfdgiodgnmbgcfha?hl=ru&authuser=1">Плагин Госуслуги</a>
+        </p>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          <a target="_blank" href="http://crl.roskazna.ru/crl/">Казначейство: Сертификаты УЦ</a>
+        </p>
+      </div>
+      <div class="description_div">
+        <p class="description_p">
+          <a target="_blank" href="https://ca.kontur.ru/about/certificates">Контур: Сертификаты УЦ</a>
+        </p>
+      </div>
+      <div class="content" id="installcer">
+        <h2>Установка сертификатов</h2>
+      </div>
+      <div class="image__wrapper" id="detail">
+          <img src="./img/cryptocertchoose.png">
+          <br><br>
+          <img src="./img/cryptocrt.png">
+          <br><br>
+          <img src="./img/crytocer.png">
+          <br><br>
+          <img src="./img/cryptoinstalllocal.png">
+          <img src="./img/cryptookay.png">
+      </div>
+      <br>
+      <div class="content" id="sigcer">
+        <h2>Подписание файлов</h2>
+      </div>
+      <div class="image__wrapper" id="detail">
+          <img src="./img/sign1.png">
+          <br><br>
+          <img src="./img/sign2.png">
+          <br><br>
+          <img src="./img/sign3.png">
+          <br><br>
+          <img src="./img/sign4.png">
+      </div> 
+      <br>
+  </div>
+    <!-- <div class="preloader"> 
+        <svg viewBox="0 0 24 24" class="preloader__image" role="img">
+          <path d="M 22.49772,12.000001 A 10.49772,10.497721 0 0 1 12,22.497722 10.49772,10.497721 0 0 1 1.5022797,12.000001 10.49772,10.497721 0 0 1 12,1.5022797 10.49772,10.497721 0 0 1 22.49772,12.000001 Z" fill="none" stroke-linecap="round"></path>
+        </svg>
+        <div class="loadpreloader">
+          <p>
+            Загрузка страницы...
+          </p>
+        </div>
+    </div> -->
+    <a id="hide" title="Убрать все изображения" onclick="hideImageButton()"></a>
+    <a id="show" title="Открыть все изображения" onclick="showImageButton()"></a>
+    <script src='./lib/clipboard.min.js'></script>
+    <script src='./lib/jquery.min.js'></script>
+    <script src="./lib/script/script.js"></script>
+</body>
+</html>
